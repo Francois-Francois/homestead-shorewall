@@ -13,11 +13,39 @@ git clone https://github.com/rikless/homestead-shorewall.git
 
 ```
 
+Always from the command line : 
+
+```
+cd homestead-shorewall
+mv * ../ && cd ../
+rm -rf homestead-shorewall README.md
+```
+
+And then test your configuration :
+
+```
+shorewall check
+```
+
+and be sure to get this message : 
+Shorewall configuration verified
+
+If there is any issue, be sure to disable the possibility to start shorewall :
+
 Edit the /etc/shorewall/shorewall.conf and set : 
 
 ```
-STARTUP_ENABLED=0
+STARTUP_ENABLED=No
 ```
 
-This is temporary, we will get back to 1 when we will be sure all is ok.
+This is temporary, fix the problem, check shorewall configuration again, and get back to Yes when you have : Shorewall configuration verified.
+
+
+
+
+
+
+
+
+
 
