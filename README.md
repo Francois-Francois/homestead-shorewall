@@ -6,16 +6,10 @@ Shorewall configuration files for better secure on your Forge droplet
 
 Log in ssh to your VM and run : 
 
-```
+```console
 sudo aptitude install shorewall
 cd /etc/shorewall
 git clone https://github.com/rikless/homestead-shorewall.git
-
-```
-
-Always from the command line : 
-
-```
 cd homestead-shorewall
 mv * ../ && cd ../
 rm -rf homestead-shorewall README.md
@@ -23,7 +17,7 @@ rm -rf homestead-shorewall README.md
 
 And then test your configuration :
 
-```
+```console
 shorewall check
 ```
 
@@ -34,7 +28,7 @@ If there is any issue, be sure to disable the possibility to start shorewall :
 
 Edit the /etc/shorewall/shorewall.conf and set : 
 
-```
+```console
 STARTUP_ENABLED=No
 ```
 
@@ -44,12 +38,9 @@ This is temporary, fix the problem, check shorewall configuration again, and get
 
 Now that all is ok, you can run :
 
-```
+```console
 /etc/init.d/shorewall start
 ```
-
-
-
 
 
 
