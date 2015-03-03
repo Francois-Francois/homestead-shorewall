@@ -1,6 +1,8 @@
 # homestead-shorewall
-Shorewall configuration files for better secure on your Forge droplet
+[Laravel Homestead](http://laravel.com/docs/5.0/homestead) comes with different applications to save time on site deployment. But, you can deploy quickly, and get a secured application on [Forge](https://forge.laravel.com/)
 
+Shorewall is a gateway/firewall configuration tool for GNU/Linux.
+For a high level description of Shorewall, see the Introduction to Shorewall. To review Shorewall functionality, see the [Features Page](http://shorewall.net/shorewall_features.htm).
 
 ## How to use it
 
