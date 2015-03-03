@@ -40,6 +40,14 @@ STARTUP_ENABLED=No
 
 This is temporary, fix the problem, check shorewall configuration again, and get back to Yes when you have : Shorewall configuration verified.
 
+## Start your firewall
+
+Now that all is ok, you can run :
+
+```
+/etc/init.d/shorewall start
+```
+
 
 
 
