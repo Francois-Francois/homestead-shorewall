@@ -1,7 +1,7 @@
 #SOURCE         DEST            POLICY          LOG             LIMIT:BURST
 #                                               LEVEL
 net             all             DROP            debug
-local           all             ACCEPT            debug
+local           all             DROP            debug
 #
 ## THE FOLLOWING POLICY MUST BE LAST
 ##
