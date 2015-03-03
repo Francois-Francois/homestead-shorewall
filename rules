@@ -1,0 +1,82 @@
+####################################################################################################
+#ACTION  SOURCE DEST    PROTO   DEST    SOURCE     ORIGINAL     RATE            USER
+#                                               PORT    PORT(S)    DEST         LIMIT
+ACCEPT  all     $FW     tcp     80  -       -       -       -
+ACCEPT  all     $FW     tcp     8080    -       -       -       -
+ACCEPT  all     $FW     udp     8080    -       -       -       -
+ACCEPT  all     $FW     tcp     591    -       -       -       -
+ACCEPT  all     $FW     udp     591    -       -       -       -
+
+#dns
+ACCEPT  all     $FW     tcp     53      -       -       -       -
+ACCEPT  all     $FW     udp     53      -       -       -       -
+ACCEPT  $FW     all     tcp     53      -       -       -       -
+ACCEPT  $FW     all     udp     53      -       -       -       -
+ACCEPT  all     $FW     tcp     953     -       -       -       -
+ACCEPT  all     $FW     udp     953     -       -       -       -
+
+#ntp
+ACCEPT  all     $FW     tcp     123     -       -       -       -
+ACCEPT  all     $FW     udp     123     -       -       -       -
+ACCEPT  $FW     net     udp     123     -       -       -       -
+ACCEPT  $FW     net     udp     123     -       -       -       -
+
+#ssh
+ACCEPT  net     $FW     tcp     22    -       -       -       -
+ACCEPT  $FW     net     tcp     22    -       -       -       -
+
+#ssl
+ACCEPT  net     $FW     tcp     443     -       -       -       -
+ACCEPT  $FW     net     tcp     443     -       -       -       -
+ACCEPT  net     $FW     udp     443     -       -       -       -
+ACCEPT  $FW     net     udp     443     -       -       -       -
+ACCEPT  net     $FW     tcp     995     -       -       -       -
+ACCEPT  net     $FW     udp     995     -       -       -       -
+
+
+# Allow outgoing ssh, http(s) and ftp
+ACCEPT  $FW     net     tcp     ssh,http,https
+
+#github
+ACCEPT  $FW     net:130.149.80.248      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:130.149.80.248      udp     9418    -       -       -       -       
+ACCEPT  $FW     net:87.238.52.168       tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:87.238.52.168       udp     9418    -       -       -       -       
+ACCEPT  $FW     net:213.229.88.74       tcp     9418    -       -       -       -
+ACCEPT  $FW     net:69.162.133.245      tcp     9418    -       -       -       -
+ACCEPT  $FW     net:207.97.227.239      tcp     9418    -       -       -       -
+ACCEPT  $FW     net:207.97.227.239      tcp     9418    -       -       -       -
+ACCEPT  $FW     net:204.232.175.90      tcp     9418    -       -       -       -
+ACCEPT  $FW     net:192.30.252.131      tcp     9418    -       -       -       -
+ACCEPT  $FW     net:192.30.252.130      tcp     9418    -       -       -       -
+ACCEPT  $FW     net:192.30.252.129      tcp     9418    -       -       -       -
+ACCEPT  $FW     net:192.30.252.128      tcp     9418    -       -       -       -
+
+#bitbucket
+ACCEPT  $FW     net:131.103.20.167      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:131.103.20.167      udp     9418    -       -       -       - 
+ACCEPT  $FW     net:131.103.20.168      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:131.103.20.168      udp     9418    -       -       -       - 
+ACCEPT  $FW     net:131.103.20.169      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:131.103.20.169      udp     9418    -       -       -       - 
+ACCEPT  $FW     net:130.149.80.248      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:130.149.80.248      udp     9418    -       -       -       - 
+ACCEPT  $FW     net:131.103.20.170      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:131.103.20.170      udp     9418    -       -       -       - 
+ACCEPT  $FW     net:131.103.20.165      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:131.103.20.165      udp     9418    -       -       -       - 
+ACCEPT  $FW     net:131.103.20.166      tcp     9418    -       -       -       -       
+ACCEPT  $FW     net:131.103.20.166      udp     9418    -       -       -       - 
+
+ACCEPT    $FW             net             udp    ntp
+ACCEPT    $FW             net             tcp    www
+ACCEPT    $FW             net             tcp    https
+ACCEPT    net             $FW             tcp    https
+ACCEPT    $FW             net             tcp    ssh
+ACCEPT    $FW             net             tcp    whois
+ACCEPT    $FW             net             icmp   echo-request
+ACCEPT    net             $FW             icmp   echo-request
+
+#allow traceroute
+ACCEPT    $FW             net             udp     33434:34000
+#LAST LINE -- ADD YOUR ENTRIES BEFORE THIS ONE -- DO NOT REMOVE
