@@ -8,17 +8,17 @@ Log in ssh to your VM and run :
 
 ```console
 sudo aptitude install shorewall
-cd /etc/shorewall
-git clone https://github.com/rikless/homestead-shorewall.git
-cd homestead-shorewall
-mv * ../ && cd ../
-rm -rf homestead-shorewall README.md
+sudo cd /etc/shorewall
+sudo git clone https://github.com/rikless/homestead-shorewall.git
+sudo cd homestead-shorewall
+sudo mv * ../ && cd ../
+sudo rm -rf homestead-shorewall README.md
 ```
 
 And then test your configuration :
 
 ```console
-shorewall check
+sudo shorewall check
 ```
 
 and be sure to get this message : 
@@ -39,7 +39,7 @@ This is temporary, fix the problem, check shorewall configuration again, and get
 Now that all is ok, you can run :
 
 ```console
-/etc/init.d/shorewall start
+sudo /etc/init.d/shorewall start
 ```
 
 
