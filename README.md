@@ -36,6 +36,13 @@ STARTUP_ENABLED=No
 
 This is temporary, fix the problem, check shorewall configuration again, and get back to Yes when you have : Shorewall configuration verified.
 
+And finaly, edit /etc/default/shorewall
+
+```console
+startup=1
+```
+
+
 ## Start your firewall
 
 Now that all is ok, you can run :
