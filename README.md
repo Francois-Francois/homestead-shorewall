@@ -10,9 +10,9 @@ Log in ssh to your VM and run :
 
 ```console
 sudo aptitude install shorewall
-sudo cd /etc/shorewall
+cd /etc/shorewall
 sudo git clone https://github.com/rikless/homestead-shorewall.git
-sudo cd homestead-shorewall
+cd homestead-shorewall
 sudo mv * ../ && cd ../
 sudo rm -rf homestead-shorewall README.md
 ```
